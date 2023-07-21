@@ -1,6 +1,6 @@
 let firstCard = 8;
 let secondCard = 9;
-
+let cards = [firstCard, secondCard]
 let hasBlackJack = false;
 let sum = firstCard + secondCard;
 let isAlive = true;
@@ -11,11 +11,14 @@ let cardsEl = document.getElementById("cards-el")
 let startBtn = document.querySelector(".start-btn")
 
 
+
 function startGame() {
     renderGame()
 }
 function renderGame(){
-    cardsEl.textContent = "Cards: " + firstCard + ", " + secondCard
+    for (let i = 0; i < cards.length; i++){
+        cardsEl.textContent += cards[i] + " ";
+    }
     sumEl.textContent = "Sum: " + sum
     startBtn.textContent = "Restart"
     if (sum < 21){
@@ -35,8 +38,8 @@ function renderGame(){
 }
 
 function newCard() {
+    let thirdCard = 6;
     sum += thirdCard
-    cardsEl.textContent = "Cards: " + firstCard + ", " + secondCard + ", " + thirdCard
-    sumEl.textContent = "Sum: " + sum
+    cards.push(thirdCard)
     renderGame()
 }
