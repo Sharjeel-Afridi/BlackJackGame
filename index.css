@@ -1,0 +1,22 @@
+body{
+    font-family: 'PT-Sans', sans-serif;
+    text-align: center;
+    background-image: url(table.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.main{
+    margin-top: 90px;
+}
+h1{
+    color: goldenrod;
+    font-size: 90px;
+}
+p{
+    font-weight: bold;
+    font-size: 40px;
+}
+#message-el {
+    font-style: italic;
+}
