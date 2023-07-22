@@ -8,6 +8,12 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
 let startBtn = document.querySelector(".start-btn")
+let player = {
+    name : "Sharjeel",
+    chips : 145
+}
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard(){
     if (Math.floor((Math.random() * 13)) + 1 === 1){
