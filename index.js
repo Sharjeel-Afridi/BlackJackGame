@@ -41,5 +41,6 @@ function newCard() {
     let thirdCard = 6;
     sum += thirdCard
     cards.push(thirdCard)
+    cardsEl.textContent = "Cards: "
     renderGame()
 }
