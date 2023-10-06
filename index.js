@@ -15,6 +15,40 @@ let player = {
 let playerEl = document.getElementById("player-el")
 playerEl.textContent = player.name + ": $" + player.chips
 
+// startBtn.addEventListener('click', restartGame)
+
+let btnCounter = 0;
+function restartGame(){
+
+    if (btnCounter === 0){
+        isAlive = true
+        let firstCard = getRandomCard();
+        let secondCard = getRandomCard();
+        sum = firstCard + secondCard;
+        cards = [firstCard, secondCard]
+        renderGame()
+        btnCounter++;
+}
+    else{
+
+        cards = [];
+        hasBlackJack = false;
+        sum = 0;
+        isAlive = true;
+        message = "";
+        cardsEl.textContent = "Cards: ";
+        sumEl.textContent = "Sum: ";
+        startBtn.textContent = "Start";
+        messageEl.textContent = "Want to play a round?";
+        // renderGame(); // Clear the card display and update the UI
+        btnCounter = 0;
+    }
+    
+}
+
+
+
+
 function getRandomCard(){
     if (Math.floor((Math.random() * 13)) + 1 === 1){
         return 11;
@@ -25,14 +59,6 @@ function getRandomCard(){
     }
 }
 
-function startGame() {
-    isAlive = true
-    let firstCard = getRandomCard();
-    let secondCard = getRandomCard();
-    sum = firstCard + secondCard;
-    cards = [firstCard, secondCard]
-    renderGame()
-}
 function renderGame(){
     for (let i = 0; i < cards.length; i++){
         cardsEl.textContent += cards[i] + " ";
@@ -65,3 +91,4 @@ function newCard() {
     }
         
 }
+
